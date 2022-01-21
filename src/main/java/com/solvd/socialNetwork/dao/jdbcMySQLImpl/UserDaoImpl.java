@@ -16,6 +16,7 @@ public class UserDaoImpl extends AbstractDao<User> implements IUserDao {
     private static final Logger LOGGER = LogManager.getLogger(UserDaoImpl.class);
     private static final String CREATE_USER = "Insert into user (username, password) VALUES (?, ?)";
     private static final String GET_USER_BY_ID = "Select * from user where id=?";
+    private static final String GET_USER_BY_USERNAME = "Select * from user where username=?";
     private static final String UPDATE_USER = "Update user set username = ?, password = ? where id = ?";
     private static final String DELETE_USER = "Delete from user where id = ?";
 
@@ -65,13 +66,41 @@ public class UserDaoImpl extends AbstractDao<User> implements IUserDao {
         return user;
     }
 
+    public User getByUsername(String username) throws SQLException {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        User user = null;
+        try {
+            connection = ConnectionPool.getConnectionPool().getConnection();
+            statement = connection.prepareStatement(GET_USER_BY_USERNAME);
+            statement.setString(1, username);
+            LOGGER.info(statement);
+            resultSet = statement.executeQuery();
+            user = resultSetToEntity(resultSet);
+            LOGGER.info(user);
+        } catch (Exception e) {
+            LOGGER.error(e);
+        } finally {
+            try {
+                close(statement);
+                close(resultSet);
+            } catch (Exception e) {
+                LOGGER.error(e);
+            }
+            ConnectionPool.getConnectionPool().releaseConnection(connection);
+        }
+        return user;
+    }
+
     @Override
     public User resultSetToEntity(ResultSet resultSet) {
         User user = new User();
         try {
+            resultSet.next();
             user.setId(resultSet.getLong("id"));
-            user.setUsername(resultSet.getString("first_name"));
-            user.setPassword(resultSet.getString("last_name"));
+            user.setUsername(resultSet.getString("username"));
+            user.setPassword(resultSet.getString("password"));
         } catch (SQLException e) {
             LOGGER.error("resultSetToEntity " + e);
         }

@@ -69,6 +69,7 @@ public class DirectMessageDaoImpl extends AbstractDao<DirectMessage> implements 
     public DirectMessage resultSetToEntity(ResultSet resultSet) {
         DirectMessage directMessage = new DirectMessage();
         try {
+            resultSet.next();
             directMessage.setId(resultSet.getLong("id"));
             directMessage.setMessage(resultSet.getString("message"));
             directMessage.setUserId(resultSet.getLong("user_id"));

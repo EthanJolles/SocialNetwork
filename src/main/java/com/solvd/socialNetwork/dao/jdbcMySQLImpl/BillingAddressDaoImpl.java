@@ -72,6 +72,7 @@ public class BillingAddressDaoImpl extends AbstractDao<BillingAddress> implement
     public BillingAddress resultSetToEntity(ResultSet resultSet) {
         BillingAddress billingAddress = new BillingAddress();
         try {
+            resultSet.next();
             billingAddress.setId(resultSet.getLong(("id")));
             billingAddress.setUserId(resultSet.getLong("profile_id"));
             billingAddress.setZip(resultSet.getInt("zip"));

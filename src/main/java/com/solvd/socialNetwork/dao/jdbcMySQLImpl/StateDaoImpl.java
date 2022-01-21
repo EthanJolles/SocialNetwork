@@ -67,6 +67,7 @@ public class StateDaoImpl extends AbstractDao<State> implements IStateDao {
     public State resultSetToEntity(ResultSet resultSet) {
         State state = new State();
         try {
+            resultSet.next();
             state.setId(resultSet.getLong(("id")));
             state.setState(resultSet.getString("state"));
             state.setCountryId(resultSet.getLong("country_id"));

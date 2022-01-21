@@ -69,6 +69,7 @@ public class RepostDaoImpl extends AbstractDao<Repost> implements IRepostDao {
     public Repost resultSetToEntity(ResultSet resultSet) {
         Repost repost = new Repost();
         try {
+            resultSet.next();
             repost.setId(resultSet.getLong("id"));
             repost.setName(resultSet.getString("name"));
             repost.setPostId(resultSet.getLong("post_id"));

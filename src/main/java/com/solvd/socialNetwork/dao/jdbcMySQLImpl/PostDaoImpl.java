@@ -72,6 +72,7 @@ public class PostDaoImpl extends AbstractDao<Post> implements IPostDao {
     public Post resultSetToEntity(ResultSet resultSet) {
         Post post = new Post();
         try {
+            resultSet.next();
             post.setId(resultSet.getLong("id"));
             post.setLocation(resultSet.getString("location"));
             post.setCaption(resultSet.getString("caption"));

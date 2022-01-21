@@ -69,6 +69,7 @@ public class CityDaoImpl extends AbstractDao<City> implements ICityDao {
     public City resultSetToEntity(ResultSet resultSet) {
         City city = new City();
         try {
+            resultSet.next();
             city.setId(resultSet.getLong(("id")));
             city.setCity(resultSet.getString("city"));
             city.setStateId(resultSet.getLong("state_id"));

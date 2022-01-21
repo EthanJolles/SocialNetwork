@@ -69,6 +69,7 @@ public class OrderDaoImpl extends AbstractDao<Order> implements IOrderDao {
     public Order resultSetToEntity(ResultSet resultSet) {
         Order order = new Order();
         try {
+            resultSet.next();
             order.setId(resultSet.getLong("id"));
             order.setUserId(resultSet.getLong("user_id"));
             order.setProductId(resultSet.getLong("product_id"));

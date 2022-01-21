@@ -68,6 +68,7 @@ public class SavedPostDaoImpl extends AbstractDao<SavedPost> implements ISavedPo
     public SavedPost resultSetToEntity(ResultSet resultSet) {
         SavedPost savedPost = new SavedPost();
         try {
+            resultSet.next();
             savedPost.setId(resultSet.getLong("id"));
             savedPost.setName(resultSet.getString("name"));
             savedPost.setPostId(resultSet.getLong("post_id"));

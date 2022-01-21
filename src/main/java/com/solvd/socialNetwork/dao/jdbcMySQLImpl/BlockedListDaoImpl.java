@@ -70,6 +70,7 @@ public class BlockedListDaoImpl extends AbstractDao<BlockedList> implements IBlo
     public BlockedList resultSetToEntity(ResultSet resultSet) {
         BlockedList blockedList = new BlockedList();
         try {
+            resultSet.next();
             blockedList.setId(resultSet.getLong("id"));
             blockedList.setProfileId(resultSet.getLong("profile_id"));
             blockedList.setBlockedProfileId(resultSet.getLong("blocked_profile_id"));
