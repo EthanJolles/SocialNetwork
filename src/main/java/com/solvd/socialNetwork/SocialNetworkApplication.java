@@ -23,6 +23,22 @@ public class SocialNetworkApplication {
     public static void main(String[] args) {
         SpringApplication.run(SocialNetworkApplication.class, args);
         LOGGER.info("Hello, springboot");
+
+//        try {
+//            UserDaoImpl userDao = new UserDaoImpl();
+//            User test = new User("ethan", "password");
+//            userDao.create(test);
+//        } catch (SQLException e) {
+//            LOGGER.error(e);
+//        }
+
+        try {
+            UserDaoImpl userDao = new UserDaoImpl();
+            User user = userDao.getById(1050L);
+            LOGGER.info(user.getUsername() + " " + user.getPassword());
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        }
 //        // deserializer test
 //        try {
 //            User test = Jackson.deserialize(new File("src/main/resources/jsonObjects/user.json"),User.class);
