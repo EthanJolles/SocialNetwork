@@ -1,0 +1,12 @@
+# to-do list
+    TODO Add streams
+    TODO Add lambda functions
+    TODO Add DAO functionality that can retrieve a row's ID from another element,
+    TODO Implement TestNG testing suite
+
+# done
+    Change to ArrayBlockingQueue
+    Add Jaxb annotation to all classes
+    Add Jackson connectivity for JSON
+    Add Jackson utility class for easy serialization/deserialization
+    Add deadlocking
