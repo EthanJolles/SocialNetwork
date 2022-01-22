@@ -34,6 +34,7 @@ public class SocialNetworkApplication {
 
 //        try {
 //            UserDaoImpl userDao = new UserDaoImpl();
+//            User user = userDao.getById(1050L);
 //            LOGGER.info(user.getUsername() + " " + user.getPassword());
 //        } catch (SQLException e) {
 //            LOGGER.error(e);
