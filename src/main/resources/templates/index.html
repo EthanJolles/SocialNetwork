@@ -9,6 +9,7 @@
 </head>
 <body>
   <div id="error"></div>
+  <h2>Login here!</h2>
   <form autocomplete="off" id="login" action="login" method="POST">
     <div>
       <label for="username"><b>Name</b></label>
@@ -23,13 +24,14 @@
       </label>
     </div>
   </form>
-
+  <hr style=height:10px>
+  <h2>Don't have an account? Create one!</h2>
   <form autocomplete="off" id="create_login" action="create_account" method="POST">
     <div>
-      <label for="username"><b>Create Username</b></label>
+      <label for="username"><b>Username</b></label>
       <input id = "create_username" name="create_username" placeholder="Create username" type="text" required>
 
-      <label for="password"><b>Create Password</b></label>
+      <label for="password"><b>Password</b></label>
       <input id="create_password" name="create_password" placeholder="Create password" type="password" required>
 
       <button type="submit">Create Account</button>
