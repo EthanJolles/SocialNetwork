@@ -12,7 +12,7 @@ public class ConnectionPool {
     final static Logger LOGGER = LogManager.getLogger(ConnectionPool.class);
 
     private static ConnectionPool connectionPool = new ConnectionPool();
-    private final ArrayBlockingQueue<Connection> CONNECTIONS = new ArrayBlockingQueue<>(5);
+    private final ArrayBlockingQueue<Connection> CONNECTIONS = new ArrayBlockingQueue<>(10);
 
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
