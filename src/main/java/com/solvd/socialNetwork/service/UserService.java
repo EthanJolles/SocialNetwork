@@ -34,6 +34,7 @@ public class UserService  {
         } finally {
             assert statement != null;
             try {
+                ConnectionPool.getConnectionPool().releaseConnection(connection);
                 statement.close();
             } catch (SQLException e) {
                 LOGGER.error(e);
@@ -60,6 +61,7 @@ public class UserService  {
             assert statement != null;
             try {
                 statement.close();
+                ConnectionPool.getConnectionPool().releaseConnection(connection);
             } catch (SQLException e) {
                 LOGGER.error(e);
             }

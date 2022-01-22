@@ -18,7 +18,6 @@ public class ConnectionPool {
 
 
     private ConnectionPool() {
-        CredentialValues credentialValues = new CredentialValues("db.properties");
         for (int i = 0; i < CONNECTIONS.remainingCapacity(); i++) {
             Connection connection;
             try {
