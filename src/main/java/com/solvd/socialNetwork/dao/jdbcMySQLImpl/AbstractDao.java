@@ -17,7 +17,7 @@ public abstract class AbstractDao<T> implements IBaseDao<T> {
         try {
             resource.close();
         } catch (Exception e) {
-            LOGGER.info(e);
+            LOGGER.error(e);
         }
     }
 }
