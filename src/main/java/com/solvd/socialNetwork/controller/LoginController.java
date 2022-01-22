@@ -1,7 +1,6 @@
 package com.solvd.socialNetwork.controller;
 
 
-import com.solvd.socialNetwork.SocialNetworkApplication;
 import com.solvd.socialNetwork.dao.jdbcMySQLImpl.UserDaoImpl;
 import com.solvd.socialNetwork.model.user.User;
 import com.solvd.socialNetwork.service.UserService;
@@ -9,9 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.SQLException;
 
@@ -27,7 +24,7 @@ public class LoginController {
             return "success";
         }
         LOGGER.info("Failed login attempt " + user + password);
-        return "failed";
+        return "invalidLogin";
     }
 
     @PostMapping("create_account")
@@ -43,6 +40,6 @@ public class LoginController {
             }
             return "success";
         }
-        return "failed";
+        return "accountExists";
     }
 }
