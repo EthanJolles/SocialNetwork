@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class SavedPostDaoImpl extends AbstractDao<SavedPost> implements ISavedPostDao {
+
     private static final Logger LOGGER = LogManager.getLogger(SavedPostDaoImpl.class);
     private static final String CREATE_SAVED_POST = "Insert into saved_post (name, post_id) VALUES (?, ?)";
     private static final String GET_SAVED_POST_BY_ID = "Select * from saved_post where id = ?";
@@ -31,8 +32,8 @@ public class SavedPostDaoImpl extends AbstractDao<SavedPost> implements ISavedPo
         } catch (Exception e) {
             LOGGER.error(e);
         } finally {
-            assert statement != null;
-            statement.close();
+            closeResource.close(statement);
+            closeResource.close(connection);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -53,12 +54,9 @@ public class SavedPostDaoImpl extends AbstractDao<SavedPost> implements ISavedPo
         } catch (Exception e) {
             LOGGER.error(e);
         } finally {
-            try {
-                close(statement);
-                close(resultSet);
-            } catch (Exception e) {
-                LOGGER.error(e);
-            }
+            closeResource.close(statement);
+            closeResource.close(resultSet);
+            closeResource.close(connection);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return savedPost;

@@ -19,7 +19,8 @@ public class LoginController {
 
     @PostMapping("login")
     public String handleLogin(@RequestParam("username") String user, @RequestParam("password") String password) {
-        if (UserService.validateUser(user, password)) {
+        UserService userService = new UserService();
+        if (userService.validateUser(user, password)) {
             LOGGER.info("Successful login attempt " + user + password);
             return "success";
         }
@@ -30,7 +31,8 @@ public class LoginController {
     @PostMapping("create_account")
     public String handleCreateAccount(@RequestParam("create_username") String newUser,
                                       @RequestParam("create_password") String newPass) {
-        if (UserService.validateUniqueUser(newUser)) {
+        UserService userService = new UserService();
+        if (userService.validateUniqueUser(newUser)) {
             UserDaoImpl userDao = new UserDaoImpl();
             User user = new User(newUser, newPass);
             try {

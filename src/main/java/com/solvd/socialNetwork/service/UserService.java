@@ -7,20 +7,19 @@ import org.apache.logging.log4j.Logger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
-public class UserService  {
+public class UserService extends AbstractService  {
 
     private static final Logger LOGGER = LogManager.getLogger(UserService.class);
 
     private static final String GET_USER_BY_LOGIN = "Select * from user where username=? and password=?";
     private static final String GET_USER_BY_USERNAME = "Select * from user where username=?";
 
-    public static boolean validateUniqueUser(String username) {
+    public boolean validateUniqueUser(String username) {
         boolean isUnique = false;
         Connection connection = null;
         PreparedStatement statement = null;
-        ResultSet resultSet;
+        ResultSet resultSet = null;
         try {
             connection = ConnectionPool.getConnectionPool().getConnection();
             statement = connection.prepareStatement(GET_USER_BY_USERNAME);
@@ -32,22 +31,19 @@ public class UserService  {
         } catch (Exception e) {
             LOGGER.error(e);
         } finally {
-            assert statement != null;
-            try {
-                ConnectionPool.getConnectionPool().releaseConnection(connection);
-                statement.close();
-            } catch (SQLException e) {
-                LOGGER.error(e);
-            }
+            closeResource.close(statement);
+            closeResource.close(resultSet);
+            closeResource.close(connection);
+            ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return isUnique;
     }
 
-    public static boolean validateUser(String username, String pass) {
+    public boolean validateUser(String username, String pass) {
         boolean isValid = false;
         Connection connection = null;
         PreparedStatement statement = null;
-        ResultSet resultSet;
+        ResultSet resultSet = null;
         try {
             connection = ConnectionPool.getConnectionPool().getConnection();
             statement = connection.prepareStatement(GET_USER_BY_LOGIN);
@@ -58,13 +54,10 @@ public class UserService  {
         } catch(Exception e) {
             LOGGER.error(e);
         } finally {
-            assert statement != null;
-            try {
-                statement.close();
-                ConnectionPool.getConnectionPool().releaseConnection(connection);
-            } catch (SQLException e) {
-                LOGGER.error(e);
-            }
+            closeResource.close(statement);
+            closeResource.close(resultSet);
+            closeResource.close(connection);
+            ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return isValid;
     }

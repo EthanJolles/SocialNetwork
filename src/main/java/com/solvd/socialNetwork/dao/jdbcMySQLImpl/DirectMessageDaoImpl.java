@@ -33,8 +33,8 @@ public class DirectMessageDaoImpl extends AbstractDao<DirectMessage> implements 
         } catch (Exception e) {
             LOGGER.error(e);
         } finally {
-            assert statement != null;
-            statement.close();
+            closeResource.close(statement);
+            closeResource.close(connection);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -54,12 +54,9 @@ public class DirectMessageDaoImpl extends AbstractDao<DirectMessage> implements 
         } catch (Exception e) {
             LOGGER.error(e);
         } finally {
-            try {
-                close(statement);
-                close(resultSet);
-            } catch (Exception e) {
-                LOGGER.error(e);
-            }
+            closeResource.close(statement);
+            closeResource.close(resultSet);
+            closeResource.close(connection);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return directMessage;
@@ -93,8 +90,8 @@ public class DirectMessageDaoImpl extends AbstractDao<DirectMessage> implements 
         } catch (Exception e) {
             LOGGER.error(e);
         } finally {
-            assert statement != null;
-            statement.close();
+            closeResource.close(statement);
+            closeResource.close(connection);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -111,8 +108,8 @@ public class DirectMessageDaoImpl extends AbstractDao<DirectMessage> implements 
         } catch (Exception e) {
             LOGGER.error(e);
         } finally {
-            assert statement != null;
-            statement.close();
+            closeResource.close(statement);
+            closeResource.close(connection);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }

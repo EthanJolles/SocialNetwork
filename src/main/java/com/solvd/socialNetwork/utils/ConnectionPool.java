@@ -22,8 +22,8 @@ public class ConnectionPool {
             Connection connection;
             try {
                 Class.forName(DRIVER);
-                connection = DriverManager.getConnection(System.getenv("heroku_url"),
-                        System.getenv(("heroku_user")), System.getenv("heroku_password"));
+                connection = DriverManager.getConnection(System.getenv("URL"),
+                        System.getenv(("USER")), System.getenv("PASSWORD"));
                 CONNECTIONS.add(connection);
             } catch (SQLException | ClassNotFoundException e) {
                 LOGGER.error(e);

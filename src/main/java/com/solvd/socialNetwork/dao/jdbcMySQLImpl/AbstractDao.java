@@ -1,6 +1,7 @@
 package com.solvd.socialNetwork.dao.jdbcMySQLImpl;
 
 import com.solvd.socialNetwork.dao.interfaces.IBaseDao;
+import com.solvd.socialNetwork.functionalInterfaces.ICloseResource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,12 +13,11 @@ public abstract class AbstractDao<T> implements IBaseDao<T> {
 
     public abstract T resultSetToEntity(ResultSet resultSet);
 
-    public void close(AutoCloseable resource) throws Exception {
-        assert resource != null;
-        try {
-            resource.close();
-        } catch (Exception e) {
-            LOGGER.error(e);
-        }
-    }
+    ICloseResource closeResource = (AutoCloseable resource) -> {
+         try {
+             resource.close();
+         } catch (Exception e) {
+             LOGGER.error(e);
+         }
+    };
 }

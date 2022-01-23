@@ -33,8 +33,8 @@ public class UserDaoImpl extends AbstractDao<User> implements IUserDao {
         } catch (Exception e) {
             LOGGER.error("create " + e);
         } finally {
-            assert statement != null;
-            statement.close();
+            closeResource.close(statement);
+            closeResource.close(connection);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -55,12 +55,9 @@ public class UserDaoImpl extends AbstractDao<User> implements IUserDao {
         } catch (Exception e) {
             LOGGER.error("getById " + e);
         } finally {
-            try {
-                close(statement);
-                close(resultSet);
-            } catch (Exception e) {
-                LOGGER.error(e);
-            }
+            closeResource.close(statement);
+            closeResource.close(resultSet);
+            closeResource.close(connection);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return user;
@@ -81,12 +78,8 @@ public class UserDaoImpl extends AbstractDao<User> implements IUserDao {
         } catch (Exception e) {
             LOGGER.error(e);
         } finally {
-            try {
-                close(statement);
-                close(resultSet);
-            } catch (Exception e) {
-                LOGGER.error(e);
-            }
+            closeResource.close(statement);
+            closeResource.close(resultSet);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return user;
@@ -120,8 +113,8 @@ public class UserDaoImpl extends AbstractDao<User> implements IUserDao {
         } catch (Exception e) {
             LOGGER.error("update " + e);
         } finally {
-            assert statement != null;
-            statement.close();
+            closeResource.close(statement);
+            closeResource.close(connection);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
@@ -138,8 +131,8 @@ public class UserDaoImpl extends AbstractDao<User> implements IUserDao {
         } catch (Exception e) {
             LOGGER.error("delete " + e);
         } finally {
-            assert statement != null;
-            statement.close();
+            closeResource.close(statement);
+            closeResource.close(connection);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
     }
