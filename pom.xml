@@ -154,17 +154,13 @@
             <version>2.13.1</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.qaprosoft/carina-core -->
         <dependency>
             <groupId>com.qaprosoft</groupId>
             <artifactId>carina-core</artifactId>
-            <version>${carina-core_version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
-                </exclusion>
-            </exclusions>
+            <version>7.2.14</version>
         </dependency>
+
 
         <dependency>
             <groupId>com.qaprosoft</groupId>
