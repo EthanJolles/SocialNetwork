@@ -16,9 +16,9 @@
     <name>socialNetwork</name>
     <description>socialNetwork</description>
 
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-    </properties>
+<!--    <properties>-->
+<!--        <maven.compiler.source>11</maven.compiler.source>-->
+<!--    </properties>-->
 
     <repositories>
         <repository>
