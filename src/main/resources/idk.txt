@@ -1,0 +1,17 @@
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project socialNetwork: Compilation failure
+[ERROR] /tmp/build_3d1db1a7/src/main/java/com/solvd/socialNetwork/api/PostUserMethod.java:[3,48] cannot access com.qaprosoft.carina.core.foundation.api.AbstractApiMethodV2
+[ERROR]   bad class file: /tmp/codon/tmp/cache/.m2/repository/com/qaprosoft/carina-api/7.2.14/carina-api-7.2.14.jar(com/qaprosoft/carina/core/foundation/api/AbstractApiMethodV2.class)
+[ERROR]     class file has wrong version 55.0, should be 52.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+!     ERROR: Failed to build app with Maven
+We're sorry this build is failing! If you can't find the issue in application code,
+please submit a ticket so we can help: https://help.heroku.com/
+!     Push rejected, failed to compile Java app.
+!     Push failed
