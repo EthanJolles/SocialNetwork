@@ -1,5 +1,0 @@
-[2022-01-24 08:51:59] [IMessager.java] [1] [INFO] INFO: '**************** Test execution summary ****************'.
-[2022-01-24 08:51:59] [IMessager.java] [1] [INFO] RESULT #1: TEST [SocialNetwork - testCreateUser] PASS [log=file:///Users/ethanjolles/Desktop/SocialNetwork/./reports/1643075513066/c8c5c59d-e52a-414f-8d5e-aa6ebbc91a21/test.log]
-[2022-01-24 08:51:59] [IMessager.java] [1] [INFO] RESULT #2: TEST [SocialNetwork - testCreateUserMissingFields] PASS [log=file:///Users/ethanjolles/Desktop/SocialNetwork/./reports/1643075513066/d087608d-54a6-4783-ba29-fbca2a9f08bb/test.log]
-[2022-01-24 08:51:59] [IMessager.java] [1] [INFO] RESULT #3: TEST [SocialNetwork - testDeleteUsers] PASS [log=file:///Users/ethanjolles/Desktop/SocialNetwork/./reports/1643075513066/a29d0505-29d3-458a-95a3-a6d4b71fbc04/test.log]
-[2022-01-24 08:51:59] [IMessager.java] [1] [INFO] RESULT #4: TEST [SocialNetwork - testGetUser] PASS [log=file:///Users/ethanjolles/Desktop/SocialNetwork/./reports/1643075513066/ddb7c056-1feb-4286-9683-8ee8cf9be876/test.log]
