@@ -1,0 +1,90 @@
+[2022-01-24 08:46:00] [IMessager.java] [1] [INFO] TEST [SocialNetwork - testCreateUserMissingFields] STARTED at [20:46:00 2022-01-24]
+[2022-01-24 08:46:01] [LoggingOutputStream.java] [1] [INFO] Request method:	POST
+Request URI:	https://jsonplaceholder.typicode.com/users
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+Cookies:		<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Body:
+[
+    {
+        "id": 1,
+        "username": "tuupjqkk",
+        "email": "Sincere@april.biz",
+        "address": {
+            "street": "Kulas Light",
+            "suite": "Apt. 556",
+            "city": "Gwenborough",
+            "zipcode": "92998-3874",
+            "geo": {
+                "lat": "-37.3159",
+                "lng": "81.1496"
+            }
+        },
+        "phone": "1-770-736-8031 x56442",
+        "website": "hildegard.org",
+        "company": {
+            "name": "kljlekkr",
+            "catchPhrase": "Multi-layered client-server neural-net",
+            "bs": "harness real-time e-markets"
+        }
+    }
+]
+HTTP/1.1 201 Created
+Date: Tue, 25 Jan 2022 01:46:01 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 544
+Connection: keep-alive
+x-powered-by: Express
+x-ratelimit-limit: 1000
+x-ratelimit-remaining: 998
+x-ratelimit-reset: 1643075171
+vary: Origin, X-HTTP-Method-Override, Accept-Encoding
+access-control-allow-credentials: true
+cache-control: no-cache
+pragma: no-cache
+expires: -1
+access-control-expose-headers: Location
+location: http://jsonplaceholder.typicode.com/users/11
+x-content-type-options: nosniff
+etag: W/"220-brpdNhHZ1nzpQPJ0J4R/ClqZ0TI"
+via: 1.1 vegur
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=e44EoH7UmXQrvUek%2F1sRAz09aN5bavE0U2ZTt8dof1GEtbx%2FYUfCvV%2FuJaP6mG5Q3LH7RAMD1PdfWdilEX77R%2FYN%2FeIlFOtbdK%2F8Zv1g8TCQ91owtl%2BcBwhY%2Bi4eva0rfg6vzwsBx1u9dF16ai4k"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 6d2dd34cbb9b59b6-IAD
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+
+{
+    "0": {
+        "id": 1,
+        "username": "tuupjqkk",
+        "email": "Sincere@april.biz",
+        "address": {
+            "street": "Kulas Light",
+            "suite": "Apt. 556",
+            "city": "Gwenborough",
+            "zipcode": "92998-3874",
+            "geo": {
+                "lat": "-37.3159",
+                "lng": "81.1496"
+            }
+        },
+        "phone": "1-770-736-8031 x56442",
+        "website": "hildegard.org",
+        "company": {
+            "name": "kljlekkr",
+            "catchPhrase": "Multi-layered client-server neural-net",
+            "bs": "harness real-time e-markets"
+        }
+    },
+    "id": 11
+}
+
+[2022-01-24 08:46:01] [IMessager.java] [1] [INFO] TEST [SocialNetwork - testCreateUserMissingFields] PASSED at [20:46:01 2022-01-24]

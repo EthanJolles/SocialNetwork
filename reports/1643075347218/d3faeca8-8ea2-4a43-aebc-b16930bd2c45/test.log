@@ -1,0 +1,90 @@
+[2022-01-24 08:49:11] [IMessager.java] [1] [INFO] TEST [SocialNetwork - testDeleteUsers] STARTED at [20:49:11 2022-01-24]
+[2022-01-24 08:49:12] [LoggingOutputStream.java] [1] [INFO] Request method:	DELETE
+Request URI:	https://jsonplaceholder.typicode.com/users/1
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+Cookies:		<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Body:
+[
+    {
+        "id": 1,
+        "name": "Ethan Jolles",
+        "username": "imhkjldf",
+        "email": "Sincere@april.biz",
+        "address": {
+            "street": "Kulas Light",
+            "suite": "Apt. 556",
+            "city": "Gwenborough",
+            "zipcode": "92998-3874",
+            "geo": {
+                "lat": "-37.3159",
+                "lng": "81.1496"
+            }
+        },
+        "phone": "1-770-736-8031 x56442",
+        "website": "hildegard.org",
+        "company": {
+            "name": "ejbgnttn",
+            "catchPhrase": "Multi-layered client-server neural-net",
+            "bs": "harness real-time e-markets"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Ethan Jolles",
+        "username": "imhkjldf",
+        "email": "Sincere@april.biz",
+        "address": {
+            "street": "Kulas Light",
+            "suite": "Apt. 556",
+            "city": "Gwenborough",
+            "zipcode": "92998-3874",
+            "geo": {
+                "lat": "-37.3159",
+                "lng": "81.1496"
+            }
+        },
+        "phone": "1-770-736-8031 x56442",
+        "website": "hildegard.org",
+        "company": {
+            "name": "ejbgnttn",
+            "catchPhrase": "Multi-layered client-server neural-net",
+            "bs": "harness real-time e-markets"
+        }
+    }
+]
+HTTP/1.1 200 OK
+Date: Tue, 25 Jan 2022 01:49:12 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 2
+Connection: keep-alive
+x-powered-by: Express
+x-ratelimit-limit: 1000
+x-ratelimit-remaining: 997
+x-ratelimit-reset: 1643075411
+vary: Origin, Accept-Encoding
+access-control-allow-credentials: true
+cache-control: no-cache
+pragma: no-cache
+expires: -1
+x-content-type-options: nosniff
+etag: W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+via: 1.1 vegur
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=hTkymSJxR%2F0haUU0x2gnJs9fwhetsKvuTWRq6iJtip4oXOR2rrfc7jKmDHFBHYRzFJ1FCkNdBbWdTpIKFEcVIW1mCVYlzF02KSJjbsG9w%2F8pIHTSeNJXAw1SrJx76OjbxT4WpilVfAnZez6jO4rN"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 6d2dd7f5ffd06f9d-IAD
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+
+{
+    
+}
+
+[2022-01-24 08:49:12] [IMessager.java] [1] [INFO] TEST [SocialNetwork - testDeleteUsers] PASSED at [20:49:12 2022-01-24]

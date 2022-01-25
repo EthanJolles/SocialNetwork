@@ -17,9 +17,17 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>socialNetwork</name>
     <description>socialNetwork</description>
-<!--    <properties>-->
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <carina-core_version>7.2.14</carina-core_version>
+        <carina-cucumber_version>7.2.14</carina-cucumber_version>
+        <java.version>11</java.version>
+        <zebrunner-agent.version>1.6.6</zebrunner-agent.version>
+        <suite>helloWorld</suite>
 <!--        <java.version>16</java.version>-->
-<!--    </properties>-->
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -56,18 +64,6 @@
             <artifactId>log4j</artifactId>
             <version>2.17.0</version>
             <type>pom</type>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>2.17.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.17.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
@@ -129,6 +125,49 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.13.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.qaprosoft</groupId>
+            <artifactId>carina-core</artifactId>
+            <version>${carina-core_version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.qaprosoft</groupId>
+            <artifactId>carina-cucumber</artifactId>
+            <version>${carina-cucumber_version}</version>
+        </dependency>
+        <!-- Log4j2 -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.17.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.17.1</version>
+        </dependency>
+        <dependency>
+        <!--we need it to reuse benefits of zebrunner testng agent for webdriver
+            sesssion(s) declaration -->
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy</artifactId>
+            <version>1.12.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
         </dependency>
     </dependencies>
 
