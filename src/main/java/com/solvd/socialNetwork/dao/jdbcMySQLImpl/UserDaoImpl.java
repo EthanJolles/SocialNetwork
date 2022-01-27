@@ -63,28 +63,6 @@ public class UserDaoImpl extends AbstractDao<User> implements IUserDao {
         return user;
     }
 
-    public User getUserByLogin(String username, String password) throws SQLException {
-        Connection connection = null;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-        User user = null;
-        try {
-            connection = ConnectionPool.getConnectionPool().getConnection();
-            statement = connection.prepareStatement(GET_USER_BY_LOGIN);
-            statement.setString(1, username);
-            statement.setString(2,password);
-            resultSet = statement.executeQuery();
-            user = resultSetToEntity(resultSet);
-        } catch (Exception e) {
-            LOGGER.error(e);
-        } finally {
-            closeResource.close(statement);
-            closeResource.close(resultSet);
-            ConnectionPool.getConnectionPool().releaseConnection(connection);
-        }
-        return user;
-    }
-
     @Override
     public User resultSetToEntity(ResultSet resultSet) {
         User user = new User();

@@ -3,11 +3,13 @@ package com.solvd.socialNetwork.service;
 import com.solvd.socialNetwork.utils.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+@Service
 public class UserService extends AbstractService  {
 
     private static final Logger LOGGER = LogManager.getLogger(UserService.class);
