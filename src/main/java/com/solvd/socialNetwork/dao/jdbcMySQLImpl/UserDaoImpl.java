@@ -16,7 +16,6 @@ public class UserDaoImpl extends AbstractDao<User> implements IUserDao {
     private static final Logger LOGGER = LogManager.getLogger(UserDaoImpl.class);
     private static final String CREATE_USER = "Insert into user (username, password) VALUES (?, ?)";
     private static final String GET_USER_BY_ID = "Select * from user where id=?";
-    private static final String GET_USER_BY_LOGIN = "Select * from user where username=? and password=?";
     private static final String UPDATE_USER = "Update user set username = ?, password = ? where id = ?";
     private static final String DELETE_USER = "Delete from user where id = ?";
 
