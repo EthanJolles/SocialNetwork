@@ -1,4 +1,4 @@
-package com.solvd.socialNetwork.api;
+package com.solvd.socialNetwork.api.users;
 
 import com.qaprosoft.carina.core.foundation.api.AbstractApiMethodV2;
 import com.qaprosoft.carina.core.foundation.utils.Configuration;
