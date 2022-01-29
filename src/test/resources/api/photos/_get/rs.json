@@ -1,0 +1,9 @@
+[
+  {
+    "albumId": "regex:[\\d]",
+    "id": "regex:[\\d]",
+    "title": "type:String",
+    "url": "type:String",
+    "thumbnailUrl": "type:String"
+  }
+]
