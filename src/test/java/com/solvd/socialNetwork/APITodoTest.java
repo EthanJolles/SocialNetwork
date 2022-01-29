@@ -1,6 +1,7 @@
 package com.solvd.socialNetwork;
 
 import com.qaprosoft.apitools.validation.JsonCompareKeywords;
+import com.qaprosoft.carina.core.foundation.IAbstractTest;
 import com.qaprosoft.carina.core.foundation.api.AbstractApiMethodV2;
 import com.qaprosoft.carina.core.foundation.api.http.HttpResponseStatusType;
 import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
@@ -10,7 +11,7 @@ import com.solvd.socialNetwork.api.todos.PostTodoMethod;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.testng.annotations.Test;
 
-public class APITodoTest extends AbstractApiMethodV2 {
+public class APITodoTest implements IAbstractTest {
 
     @Test
     @MethodOwner(owner = "Ethan Jolles")

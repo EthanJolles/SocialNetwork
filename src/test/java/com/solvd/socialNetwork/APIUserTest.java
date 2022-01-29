@@ -56,10 +56,9 @@ public class APIUserTest implements IAbstractTest {
     @MethodOwner(owner = "Ethan")
     @TestPriority(Priority.P1)
     public void testDeleteUsers() {
-        DeleteUserMethod deleteUserMethod = new DeleteUserMethod();
-        deleteUserMethod.expectResponseStatus(HttpResponseStatusType.OK_200);
-        deleteUserMethod.callAPI();
-        deleteUserMethod.validateResponse();
+        DeleteUserMethod api = new DeleteUserMethod();
+        api.expectResponseStatus(HttpResponseStatusType.OK_200);
+        api.callAPI();
+        api.validateResponse();
     }
-
 }
