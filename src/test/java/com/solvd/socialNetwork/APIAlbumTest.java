@@ -39,5 +39,8 @@ public class APIAlbumTest implements IAbstractTest {
     @MethodOwner(owner = "Ethan Jolles")
     public void testDeleteAlbum() throws Exception {
         DeleteAlbumMethod api = new DeleteAlbumMethod();
+        api.expectResponseStatus(HttpResponseStatusType.OK_200);
+        api.callAPI();
+        api.validateResponse();
     }
 }
