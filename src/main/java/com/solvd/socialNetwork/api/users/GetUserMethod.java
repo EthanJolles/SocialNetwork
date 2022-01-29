@@ -10,5 +10,4 @@ public class GetUserMethod extends AbstractApiMethodV2 {
         super(null, "api/users/_get/rs.json", new Properties());
         replaceUrlPlaceholder("base_url", Configuration.getEnvArg("api_url"));
     }
-
 }
