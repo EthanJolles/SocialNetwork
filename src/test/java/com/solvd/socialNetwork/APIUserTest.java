@@ -7,16 +7,16 @@ import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
 import com.qaprosoft.carina.core.foundation.utils.tag.Priority;
 import com.qaprosoft.carina.core.foundation.utils.tag.TestPriority;
 import com.solvd.socialNetwork.api.users.DeleteUserMethod;
-import com.solvd.socialNetwork.api.users.GetUserMethods;
+import com.solvd.socialNetwork.api.users.GetUserMethod;
 import com.solvd.socialNetwork.api.users.PostUserMethod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.testng.annotations.Test;
 
-public class APISampleTest implements IAbstractTest {
+public class APIUserTest implements IAbstractTest {
 
-    private static final Logger LOGGER = LogManager.getLogger(APISampleTest.class);
+    private static final Logger LOGGER = LogManager.getLogger(APIUserTest.class);
 
     @Test()
     @MethodOwner(owner = "Ethan")
@@ -45,11 +45,11 @@ public class APISampleTest implements IAbstractTest {
     @MethodOwner(owner = "Ethan")
     public void testGetUser() throws Exception {
         LOGGER.info("Test Get User");
-        GetUserMethods getUserMethods = new GetUserMethods();
-        getUserMethods.expectResponseStatus(HttpResponseStatusType.OK_200);
-        getUserMethods.callAPI();
-        getUserMethods.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
-        getUserMethods.validateResponseAgainstSchema("api/users/_get/rs.schema");
+        GetUserMethod api = new GetUserMethod();
+        api.expectResponseStatus(HttpResponseStatusType.OK_200);
+        api.callAPI();
+        api.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+        api.validateResponseAgainstSchema("api/users/_get/rs.schema");
     }
 
     @Test()
