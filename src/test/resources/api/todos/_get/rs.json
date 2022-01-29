@@ -1,0 +1,8 @@
+[
+  {
+    "userId": "regex:[\\d]",
+    "id": "regex:[\\d]",
+    "title": "type:String",
+    "completed": "type:Boolean"
+  }
+]
