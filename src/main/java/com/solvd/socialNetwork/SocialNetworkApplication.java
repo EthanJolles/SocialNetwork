@@ -57,7 +57,7 @@ public class SocialNetworkApplication {
 //        }
 //
 //       //database query test for 'i' amount of queries
-//        for (int i = 1; i <= 1; i++) {
+//        for (int i = 1; i <= 10; i++) {
 //            try {
 //                UserDaoImpl userDao = new UserDaoImpl();
 //                User test = new User("test" + i,"" + i);
