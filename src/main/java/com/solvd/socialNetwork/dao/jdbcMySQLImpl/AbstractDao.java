@@ -20,4 +20,13 @@ public abstract class AbstractDao<T> implements IBaseDao<T> {
              LOGGER.error(e);
          }
     };
+
+    @Deprecated
+    public void close(AutoCloseable resource) {
+        try {
+            resource.close();
+        } catch (Exception e) {
+            LOGGER.error(e);
+        }
+    }
 }
