@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 @Service
 public class UserService extends AbstractService  {
@@ -16,6 +17,28 @@ public class UserService extends AbstractService  {
 
     private static final String GET_USER_BY_LOGIN = "Select * from user where username=? and password=?";
     private static final String GET_USER_BY_USERNAME = "Select * from user where username=?";
+    private static final String GET_USER_COUNT = "Select COUNT(*) as row_count from user";
+
+    public long countUsers() {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        long userCount = 0L;
+        try {
+            connection = ConnectionPool.getConnectionPool().getConnection();
+            statement = connection.prepareStatement(GET_USER_COUNT);
+            resultSet = statement.executeQuery();
+            resultSet.next();
+            userCount = resultSet.getLong("row_count");
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            closeResource.close(statement);
+            closeResource.close(resultSet);
+            ConnectionPool.getConnectionPool().releaseConnection(connection);
+        }
+        return userCount;
+    }
 
     public boolean validateUniqueUser(String username) {
         boolean isUnique = false;
@@ -35,7 +58,6 @@ public class UserService extends AbstractService  {
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return isUnique;
@@ -58,7 +80,6 @@ public class UserService extends AbstractService  {
         } finally {
             closeResource.close(statement);
             closeResource.close(resultSet);
-            closeResource.close(connection);
             ConnectionPool.getConnectionPool().releaseConnection(connection);
         }
         return isValid;
