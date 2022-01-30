@@ -9,6 +9,7 @@
 </head>
 <body>
 <span th:text="${loginController}"></span>
+<p>There are <span th:text="${userCount}"></span> total users</p>
 <h2>Login here!</h2>
 <form autocomplete="off" id="login" th:method="post" th:action="loginAttempt">
   <div>
